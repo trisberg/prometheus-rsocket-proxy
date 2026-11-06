@@ -14,7 +14,7 @@ dependencies {
   compileOnly 'org.jspecify:jspecify:1.0.0'
   implementation 'org.xerial.snappy:snappy-java:latest.release'
 
-  testImplementation(platform('org.junit:junit-bom:5.14.2'))
+  testImplementation(platform('org.junit:junit-bom:6.0.3'))
 
   testImplementation 'ch.qos.logback:logback-classic:1.5.+'
   testImplementation 'org.junit.jupiter:junit-jupiter'
