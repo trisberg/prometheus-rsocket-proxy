@@ -18,7 +18,7 @@ package io.micrometer.prometheus.rsocket;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.DistributionSummary;
 import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.lang.Nullable;
+import org.jspecify.annotations.Nullable;
 import io.micrometer.core.util.internal.logging.InternalLogger;
 import io.micrometer.core.util.internal.logging.InternalLoggerFactory;
 import io.micrometer.prometheusmetrics.PrometheusMeterRegistry;
@@ -274,8 +274,7 @@ public class PrometheusRSocketClient {
     return DefaultPayload.create(encryptedMetrics, encryptedPublicKey);
   }
 
-  @Nullable
-  private PublicKey decodePublicKey(ByteBuffer encodedKeyBuffer) {
+  private @Nullable PublicKey decodePublicKey(ByteBuffer encodedKeyBuffer) {
     byte[] encodedKey = new byte[encodedKeyBuffer.capacity()];
     encodedKeyBuffer.get(encodedKey);
 
